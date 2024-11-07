@@ -18,3 +18,17 @@
 ```
 
 ---
+
+# Documentation Assignment
+
+This Assignment have files at some folders.
+- `screenshot` is folder results and log when I am run producer kafka and consumer kafka using spark. I have difference when kafka stream using output mode `update` and `complete`. when i am using `update` mode result at console updated but not show all data, difference when i am using `complete` mode all data show in console from first `event_time` until current `event_time` and updated data show at console.
+
+- `scripts\event_assignment_producer.py` this file code i am rewrite for understand of code and add some column, but i am not change order and this use case, because I want to check how late data send to message topic using producer kafka.
+
+- `spark-scripts\spark-assignment-event-consumer.py` this file code i am rewrite too but add some code using watermark for handling aggregation late data, i am add handling convert data datetime unix type to datetime for compatible using matermark. At this file i am using complete mode for show console log all data
+
+
+If you want to run this assignment you can run:
+- `spark-produce-assignment` for runing producer for create message topic
+- `spark-consume-assignment` for runing consumer for show result data by aggragetion using complete output mode with group  by window and watermark

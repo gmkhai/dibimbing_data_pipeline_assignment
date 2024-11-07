@@ -178,6 +178,23 @@ spark-consume:
 		spark-submit \
 		/spark-scripts/spark-event-consumer.py
 
+spark-produce-assignment:
+	@echo '__________________________________________________________'
+	@echo 'Producing fake events ...'
+	@echo '__________________________________________________________'
+	@docker exec ${SPARK_WORKER_CONTAINER_NAME}-1 \
+		python \
+		/scripts/event_assignment_producer.py
+
+spark-consume-assignment:
+	@echo '__________________________________________________________'
+	@echo 'Consuming fake events ...'
+	@echo '__________________________________________________________'
+	@docker exec ${SPARK_WORKER_CONTAINER_NAME}-1 \
+		spark-submit \
+		/spark-scripts/spark-assignment-event-consumer.py
+
+
 datahub-create:
 	@echo '__________________________________________________________'
 	@echo 'Creating Datahub Instance ...'
