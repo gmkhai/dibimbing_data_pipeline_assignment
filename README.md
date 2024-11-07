@@ -30,5 +30,8 @@ This Assignment have files at some folders.
 
 
 If you want to run this assignment you can run:
+- `make docker-build`
+- `make spark`
+- `make kafka`
 - `make spark-produce-assignment` for runing producer for create message topic
 - `make spark-consume-assignment` for runing consumer for show result data by aggragetion using complete output mode with group  by window and watermark
